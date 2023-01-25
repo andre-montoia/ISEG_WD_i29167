@@ -1,12 +1,14 @@
 from flask import Flask, render_template, redirect, url_for, session, jsonify
 from flask_dance.contrib.google import make_google_blueprint, google
 
-app = Flask(__name__)
-app.secret_key = "yoursecretkey"
 
+app = Flask(__name__)
+app.config['OAUTHLIB_INSECURE_TRANSPORT'] = True
+app.secret_key = "yoursecretkey"
+# AIzaSyByifQgxNH1EhlVDORm3Tsil38CSZqlo7w
 # create the google oauth blueprint
-google_bp = make_google_blueprint(client_id="YOUR_CLIENT_ID",
-                                  client_secret="YOUR_CLIENT_SECRET",
+google_bp = make_google_blueprint(client_id="148837241813-2prertuaf355jrm1ebvib94lblvk5vh7.apps.googleusercontent.com",
+                                  client_secret="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",
                                   scope=["https://www.googleapis.com/auth/userinfo.email","https://www.googleapis.com/auth/userinfo.profile"])
 
 # register the blueprint
@@ -44,4 +46,4 @@ def profile():
         return redirect(url_for("home"))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
