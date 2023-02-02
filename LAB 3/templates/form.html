@@ -1,0 +1,9 @@
+<form method="POST">
+{{ form.hidden_tag() }}
+<label>Name:</label>
+{{ form.name(class="error") }}
+{% for error in form.name.errors %}
+<span style="color: red;">{{ error }}</span>
+{% endfor %}
+{{ form.submit() }}
+</form>
