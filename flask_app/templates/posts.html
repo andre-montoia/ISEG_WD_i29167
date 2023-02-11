@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Posts Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sarcastic Posts Feed</h1>
+    </header>
+    <main>
+      {% for post in posts %}
+        <div>
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.content }}</p>
+        </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>

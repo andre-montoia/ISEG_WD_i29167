@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+  </head>
+  <body>
+    <header style="background-color: {{ user.header_color }};">
+      <img src="{{ user.header_image }}" alt="Header Image">
+    </header>
+    <main>
+      <h1 style="color: {{ user.font_color }};">{{ user.username }}</h1>
+      <p>{{ user.bio }}</p>
+    </main>
+  </body>
+</html>
